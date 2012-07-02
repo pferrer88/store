@@ -10,5 +10,5 @@ Spree.config do |config|
   # Uncomment to override the default site name.
   config.site_name = "Circuit Store"
   Spree::Config.set(logo: "/logo.jpg")
-  Spree::Config.set(:products_per_page => 8)
+  Spree::Config.set(:products_per_page => 12)
 end
