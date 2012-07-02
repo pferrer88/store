@@ -1,2 +1,2 @@
 #! /bin/bash
-phd $0 store store
+phd $0 store circuit-depot.com
