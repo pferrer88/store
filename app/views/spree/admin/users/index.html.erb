@@ -13,13 +13,17 @@
   <thead>
     <tr data-hook="admin_users_index_headers">
       <th><%= sort_link @search,:email, t(:user), {}, {:title => 'users_email_title'} %></th>
+			<th><%= sort_link @search,:verified, t(:verified), {}, {:title => 'users_verified_title'} %></th>
+			<th><%= sort_link @search,:company, t(:company), {}, {:title => 'users_company_title'} %></th>
       <th data-hook="admin_users_index_header_actions"></th>
     </tr>
   </thead>
   <tbody>
     <% @users.each do |user|%>
       <tr id="<%= spree_dom_id user %>" data-hook="admin_users_index_rows">
-        <td width="350px" class='user_email'><%=link_to user.email, object_url(user) %></td>
+        <td width="330px" class='user_email'><%=link_to user.email, object_url(user) %></td>
+				<td width="35px" class='user_verified'><%= user.verified %></td>
+				<td width="60px" class='user_company_name'><%= user.company_name %></td>
         <td data-hook="admin_users_index_row_actions">
           <%= link_to_edit user, :class => 'edit' %> &nbsp;
           <%= link_to_delete user %>
