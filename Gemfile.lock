@@ -6,7 +6,7 @@ GIT
       spree_core (>= 1.0.0)
 
 GIT
-  remote: git@github.com:spree/spree_static_content.git
+  remote: git://github.com/spree/spree_static_content.git
   revision: 2b7d51f53bb5376200f0d5af4b009a6cdadef523
   branch: 1-1-stable
   specs:
