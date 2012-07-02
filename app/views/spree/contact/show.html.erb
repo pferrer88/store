@@ -1,0 +1,47 @@
+<% @body_id = 'contact_us' %>
+
+<div class="row">
+
+	<div class="columns alpha eight" id="contact_map">
+<iframe width="425" height="500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=9100+S+DADELAND+BLVD&amp;aq=&amp;sll=26.023834,-80.214972&amp;sspn=1.428982,2.455444&amp;ie=UTF8&amp;hq=&amp;hnear=9100+S+Dadeland+Blvd,+Miami,+Florida+33156&amp;t=m&amp;ll=25.685005,-80.314436&amp;spn=0.027072,0.036564&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=9100+S+DADELAND+BLVD&amp;aq=&amp;sll=26.023834,-80.214972&amp;sspn=1.428982,2.455444&amp;ie=UTF8&amp;hq=&amp;hnear=9100+S+Dadeland+Blvd,+Miami,+Florida+33156&amp;t=m&amp;ll=25.685005,-80.314436&amp;spn=0.027072,0.036564&amp;z=14&amp;iwloc=A" style="color:#0000FF;text-align:left">View Larger Map</a></small>	</div>
+	<div class="columns alpha eight" id="contact-us">
+	  <h1><%= t("contact_us") %></h1>
+
+	  <div data-hook='contact'>
+	    <%= render "spree/shared/error_messages", :target => @message %>
+			<br/>
+
+	    <%= form_for(:message, :url => contact_path) do |f| %>
+
+	      <div data-hook="contact_inside_form">
+	        <p>
+	          <%= f.label :topic_id, t("subject") %><br />
+	          <%= f.collection_select :topic_id, @topics, :id, :name  %>  
+	        </p>
+
+	        <p>
+	          <%= f.label :name, t("name") %><br />
+	          <%= f.text_field :name  %>  
+	        </p>
+
+	        <p>
+	          <%= f.label :email, t("email") %><br />
+	          <%= f.text_field :email  %>  
+	        </p>
+
+	        <p>
+	          <%= f.label :order_number, t(:order_number) %> (<%= t('optional') %>)<br />
+	          <%= f.text_field :order_number  %>  
+	        </p>
+
+	        <p>
+	          <%= f.label :message, t("message") %><br />
+	          <%= f.text_area :message, :rows => 10  %>  
+	        </p>
+
+	        <p><%= submit_tag t("send_message"), :class => 'button primary' %></p>
+	      </div>
+	    <% end %>
+	  </div>
+	</div>
+</div>

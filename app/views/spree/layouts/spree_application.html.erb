@@ -1,0 +1,95 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--><html lang="en"><!--<![endif]-->
+
+  
+  <head data-hook="inside_head">
+    <%= render :partial => 'spree/shared/head' %>
+  </head>
+
+  <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body" style="background: url(/01.jpg) white fixed;">
+	
+  	<div class="toppy row">
+			<div class="columns sixteen">
+				<div class="container">
+					<header id="header" class="row" data-hook>
+				
+				  	<figure id="logo" class="columns alpha six" data-hook>
+			        <%= logo %>
+			      </figure> 
+				
+						<div class="columns omega ten" data-hook>
+						
+							<!-- <div class="row" data-hook> -->
+								<nav id="top-nav-bar" class="columns alpha ten">
+					        <ul id="nav-bar" class="inline" data-hook>
+					          <%= render :partial => 'spree/shared/nav_bar' %>
+					        </ul>
+					      </nav>
+
+					      <% if store_menu? %>
+					        <nav class="columns alpha omega ten">
+					          <ul id="main-nav-bar" class="inline" data-hook>            
+					            <%= render :partial => 'spree/shared/store_menu' %>
+					          </ul>
+					        </nav>
+					      <% end %>
+							<!-- </div> -->
+					
+						</div><!-- columns omega ten -->
+					</header>
+				</div>
+			</div><!-- columns sixteen -->
+		</div><!-- row -->
+          
+    
+
+    <div class="container">
+
+      <div id="wrapper" class="row" data-hook>
+				<% if content_for?(:featured) %>
+          <div id="featured" class="columns sixteen" data-hook>
+            <%= yield :featured %>
+          </div>
+        <% end %>
+        
+        <% if content_for?(:sidebar) %>
+          <aside id="sidebar" class="columns alpha four" data-hook>
+            <%= yield :sidebar %>
+          </aside>
+        <% end %>
+
+        <div id="content" class="columns omega <% if !content_for?(:sidebar) %> sixteen alpha <% else %> twelve <% end %>" data-hook>
+          <%= breadcrumbs(@taxon) %>
+          <%= flash_messages %>
+          <%= yield %>
+        </div>
+
+      </div>
+
+      <footer id="footer" class="row" data-hook>
+        <div id="footer-left" class="columns four" data-hook>
+          <p>Circuit Store 2012</p>
+        </div>
+				<div id="footer-middleleft" class="columns four" data-hook>
+        	<p>Facebook</p>
+        </div>
+				<div id="footer-middleright" class="columns four" data-hook>
+        	<p>Twitter</p>
+        </div>
+        <div id="footer-right" class="columns four" data-hook>
+        	<p>Menu</p>
+        </div>
+      </footer>
+
+    </div>
+
+    <%= render :partial => 'spree/shared/google_analytics' %>
+
+  </body>
+
+</html>
