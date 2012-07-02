@@ -9,10 +9,21 @@
   
   <head data-hook="inside_head">
     <%= render :partial => 'spree/shared/head' %>
+
+		<% if params[:controller] == "spree/home" %>
+			<% @style = "background: url(/01.jpg) white fixed;" %>
+		<% elsif params[:controller] == "spree/products"%>
+			<% @style = "background: url(/05.jpg) white fixed;" %>
+		<% elsif params[:controller] == "spree/contact"%>
+			<% @style = "background: url(/03.jpg) white fixed;" %>
+		<% else %>
+			<% @style ="background: url(/06.jpg) white fixed;" %>
+		<% end %>
   </head>
 
-  <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body" style="background: url(/01.jpg) white fixed;">
+
 	
+  <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body" style="<%= @style %>">
   	<div class="toppy row">
 			<div class="columns sixteen">
 				<div class="container">
@@ -74,7 +85,7 @@
       <footer id="footer" class="row" data-hook>
         <div id="footer-left" class="columns four" data-hook>
           <h3>Contact Us</h3>
-					<p>Call Us</p>
+					<p>Call Us: 123124124124</p>
         </div>
 				<div id="footer-middleleft" class="columns four" data-hook>
         	<p>Facebook</p>
@@ -83,7 +94,11 @@
         	<p>Twitter</p>
         </div>
         <div id="footer-right" class="columns four" data-hook>
-        	<p>Menu</p>
+        	<ul>
+						<li id="home-link" data-hook><%= link_to t(:home), root_path %></li>
+						<li id="contact-link" data-hook><%= link_to t(:contact), contact_path %> </li>
+						<li id="products-link" data-hook><%= link_to t(:products), products_path %></li>
+					</ul>
         </div>
       </footer>
 

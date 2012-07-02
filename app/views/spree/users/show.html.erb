@@ -2,6 +2,16 @@
 
 <div data-hook="account_summary">
   <dl id="user-info">
+		<dt><%= t(:user_name) %></dt>
+    <dd><%= @user.user_name %> (<%= link_to t(:edit), spree.edit_account_path %>)</dd>
+		<dt><%= t(:user_lastname) %></dt>
+    <dd><%= @user.user_lastname %> (<%= link_to t(:edit), spree.edit_account_path %>)</dd>
+		<dt><%= t(:company_name) %></dt>
+    <dd><%= @user.company_name %> (<%= link_to t(:edit), spree.edit_account_path %>)</dd>
+		<dt><%= t(:address) %></dt>
+    <dd><%= @user.address %> (<%= link_to t(:edit), spree.edit_account_path %>)</dd>
+		<dt><%= t(:phone) %></dt>
+    <dd><%= @user.phone %> (<%= link_to t(:edit), spree.edit_account_path %>)</dd>
     <dt><%= t(:email) %></dt>
     <dd><%= @user.email %> (<%= link_to t(:edit), spree.edit_account_path %>)</dd>
   </dl>

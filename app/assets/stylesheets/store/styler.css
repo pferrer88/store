@@ -77,9 +77,22 @@ ul#products li {
 table tbody tr.alt, table tbody tr.odd, table tfoot tr.alt, table tfoot tr.odd {
   background-color: #000000;
 }
+
+#order_summary {
+  background-color: #000000;
+}
+
 #product-description .product-title {
   border-bottom: 1px solid #d9d9db;
   margin-bottom: 15px;
   color: #ffffff;
   font-size: 24px;
+}
+
+ul#products li .price {
+  color: #000000;
+  font-size: 12px;
+  padding-top: 5px;
+  display: block;
+  text-align: right;
 }

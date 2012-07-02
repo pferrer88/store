@@ -1,12 +1,24 @@
 <h1><%= t(:user_account) %></h1>
 
 <table>
-  <tr data-hook="email">
+	<dt><%= t(:user_name) %></dt>
+  <dd><%= @user.user_name %> (<%= link_to t(:edit), spree.edit_account_path %>)</dd>
+	<dt><%= t(:user_lastname) %></dt>
+  <dd><%= @user.user_lastname %> (<%= link_to t(:edit), spree.edit_account_path %>)</dd>
+	<dt><%= t(:company_name) %></dt>
+  <dd><%= @user.company_name %> (<%= link_to t(:edit), spree.edit_account_path %>)</dd>
+	<dt><%= t(:address) %></dt>
+  <dd><%= @user.address %> (<%= link_to t(:edit), spree.edit_account_path %>)</dd>
+	<dt><%= t(:phone) %></dt>
+  <dd><%= @user.phone %> (<%= link_to t(:edit), spree.edit_account_path %>)</dd>
+  <dt><%= t(:email) %></dt>
+  <dd><%= @user.email %> (<%= link_to t(:edit), spree.edit_account_path %>)</dd>
+  <!-- <tr data-hook="email">
     <th><%= t(:email) %></th>
     <td>
       <%= @user.email %>
     </td>
-  </tr>
+  </tr> -->
   <tr data-hook="roles">
     <th><%= t(:roles) %></th>
     <td>

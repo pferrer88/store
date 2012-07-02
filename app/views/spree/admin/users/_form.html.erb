@@ -16,4 +16,9 @@
     <%= f.password_field :password_confirmation %>
     <%= f.error_message_on :password_confirmation %>
   <% end %>
+
+	<%= f.field_container :verified do %>
+    <%= f.label :verified, t(:verified) %><br />
+    <%= f.check_box :verified %>
+  <% end %>
 </div>

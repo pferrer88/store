@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120702051557) do
+ActiveRecord::Schema.define(:version => 20120702134359) do
 
   create_table "spree_activators", :force => true do |t|
     t.string   "description"
@@ -605,6 +605,12 @@ ActiveRecord::Schema.define(:version => 20120702051557) do
     t.datetime "remember_created_at"
     t.datetime "reset_password_sent_at"
     t.string   "api_key",                :limit => 48
+    t.string   "user_name"
+    t.string   "user_lastname"
+    t.string   "company_name"
+    t.string   "address"
+    t.string   "phone"
+    t.boolean  "verified"
   end
 
   add_index "spree_users", ["persistence_token"], :name => "index_users_on_persistence_token"
