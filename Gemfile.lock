@@ -6,6 +6,13 @@ GIT
       spree_core (>= 1.0.0)
 
 GIT
+  remote: git://github.com/spree/spree_clean.git
+  revision: 9bdefd5c7be7efc889cc6b67c45138aefcdf91a0
+  specs:
+    spree_clean (1.0.3)
+      spree_core (~> 1.1.0)
+
+GIT
   remote: git://github.com/spree/spree_static_content.git
   revision: 2b7d51f53bb5376200f0d5af4b009a6cdadef523
   branch: 1-1-stable
@@ -261,6 +268,7 @@ DEPENDENCIES
   rails (= 3.2.3)
   sass-rails (~> 3.2.3)
   spree
+  spree_clean!
   spree_contact_form!
   spree_skrill
   spree_slider

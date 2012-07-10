@@ -49,3 +49,4 @@ gem 'spree_static_content', :git => 'git://github.com/spree/spree_static_content
 gem 'spree_usa_epay'
 gem 'spree_skrill'
 gem 'spree_slider'
+gem 'spree_clean', :git => "git://github.com/spree/spree_clean.git"
