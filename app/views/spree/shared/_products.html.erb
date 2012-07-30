@@ -18,8 +18,10 @@
           <%= link_to small_image(product, :itemprop => "image"), product, :itemprop => 'url' %>
         </div>
         <%= link_to truncate(product.name, :length => 50), product, :class => 'info', :itemprop => "name", :title => product.name %>
-        <span class="price selling" itemprop="price"><%= number_to_currency product.price %></span>
-      </li>
+        <% if current_user %>
+					<span class="price selling" itemprop="price"><%= number_to_currency product.price %></span>
+      	<% end %>
+			</li>
     <% end %>
   <% end %>
 </ul>

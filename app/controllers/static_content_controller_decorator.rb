@@ -1,8 +1,6 @@
 # class Spree::StaticContentController < Spree::BaseController
 Spree::StaticContentController.class_eval do
-  caches_action :show#, :cache_path => Proc.new { |controller|
-  #     "spree_static_content/" + controller.params[:path].to_s + "_spree_static_content"
-  #   }
+  # caches_action :show
   
   layout :determine_layout
   
